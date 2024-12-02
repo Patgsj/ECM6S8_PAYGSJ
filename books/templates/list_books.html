@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Libros con valoración mayor a 1500</h1>
+    </div>
+    <ul>
+        {% for book in high_rated_books %}
+            <li>
+                Título: {{ book.title }}, Autor: {{ book.author }}, Valoración: {{ book.rating }}
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="header">
+        <h1>Listado de todos los libros:</h1>
+    </div>
+    <ul>
+        {% for book in all_books %}
+            <li>
+                Título: {{ book.title }}, Autor: {{ book.author }}, Valoración: {{ book.rating }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
